@@ -1,0 +1,89 @@
+Question : In this assignment, you will be working with a fictional database of a company named "XYZ Corp." 
+The database contains two tables, employees and departments. Your task is to write SQL commands to 
+retrieve and manipulate data from these tables.
+
+Instructions:
+Use the employees table to answer the following questions:
+
+
+a. Write a query to select all columns and rows from the employees table.
+Answer : 
+
+Sql command :  SELECT * FROM employees;
+//This SQL command selects all columns and rows from the employees table.
+
+
+b. Write a query to select only the name and salary columns of all employees with a salary greater than 50000.
+Answer:
+
+Sql command : SELECT name, salary FROM employees WHERE salary > 50000;
+//This SQL command selects the name and salary columns of all employees whose salary is greater than 50000.
+
+
+c. Write a query to calculate the average salary of all employees.
+Answer: 
+
+Sql command : SELECT AVG(salary) FROM employees;
+//This SQL command calculates the average salary of all employees.
+
+
+d. Write a query to count the number of employees who work in the "Marketing" department.
+Answer: 
+
+Sql command : SELECT COUNT(*) FROM employees WHERE department_id = (SELECT id FROM departments WHERE name = 'Marketing');
+//This SQL command counts the number of employees who work in the "Marketing" department.
+
+
+e. Write a query to update the salary column of the employee with an id of 1001 to 60000.
+Answer :
+
+Sql command : UPDATE employees SET salary = 60000 WHERE id = 1001;
+//This SQL command updates the salary of the employee with an id of 1001 to 60000.
+
+
+
+f. Write a query to delete all employees whose salary is less than 30000.
+Answer :
+
+Sql command : DELETE FROM employees WHERE salary < 30000;
+//This SQL command deletes all employees whose salary is less than 30000.
+
+
+
+
+
+
+
+
+Use the departments table to answer the following questions:
+
+
+a. Write a query to select all columns and rows from the departments table.
+Answer :
+
+Sql command : SELECT * FROM departments;
+//This SQL command selects the name and manager columns of the "Finance" department.
+
+
+b. Write a query to select only the name and manager columns of the "Finance" department.
+Answer : 
+
+Sql command : SELECT name, manager FROM departments WHERE name = 'Finance';
+
+// This SQL command selects the name and manager columns of the "Finance" department.
+
+
+c. Write a query to calculate the total number of employees in each department.
+Answer : 
+
+Sql command : SELECT departments.name, COUNT(*) FROM employees JOIN departments ON employees.department_id = departments.id GROUP BY departments.name;
+
+//This SQL command calculates the total number of employees in each department.
+
+
+d. Write a query to insert a new department called "Research" with a manager named "John Doe".
+Answer :
+
+Sql command : INSERT INTO departments (name, manager) VALUES ('Research', 'John Doe');
+
+//This SQL command inserts a new department called "Research" with a manager named "John Doe".
